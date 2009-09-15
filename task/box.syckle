@@ -1,6 +1,5 @@
 ---
 box:
   service: Box
-  include: ~
-  exclude: [ doc ]
+  types  : [gz, gem]
 

@@ -1,9 +1,8 @@
 ---
 vclog:
   service  : VClog
-  format   : html   # xml, txt
+  active   : false
   layout   : rel    # gnu
   typed    : false
   output   : ~
-  active   : false
 
