@@ -223,7 +223,7 @@ public
     cryptStream.write(encrypted)
   end
 
-  # Dcrypt an encrypted IO stream.
+  # Decrypt an encrypted IO stream.
   def decrypt_stream(cryptStream, plainStream)
     # Cypher-block-chain mode
     chain = cryptStream.read(block_size())
