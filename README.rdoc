@@ -1,6 +1,6 @@
 = BiCrypt
 
-  http://death.rubyforge.org
+* http://rubyworks.github.com/bicrypt
 
 
 == DESCRIPTION
@@ -10,12 +10,13 @@ BiCrypt is a simple two-way encryption class.
 
 == FEATURES/ISSUES
 
-* ... to be done ...
+* Simple to use.
+* Good for light-weight "deterence" applications.
 
 
 == RELEASE NOTES
 
-Please see RELEASE file.
+Please see HISTORY file.
 
 
 == SYNOPSIS
@@ -43,9 +44,10 @@ Windows users use 'ruby setup.rb all'.
 
 == COPYING
 
-Copyright (c) 2007 The Coding Dead
+(GNU Lesser General Public License v.3)
 
-This program is ditributed unser the terms of the LGPLv3 license.
+Copyright (c) 2007 Thomas Sawyer
+
+This program is ditributed unser the terms of the LGPL v.3 license.
 
 See LICENSE file for details.
-
