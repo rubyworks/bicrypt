@@ -1,0 +1,7 @@
+name: bicrypt
+date: 2009-06-26
+version: 1.0.0
+
+requires:
+  - syckle (build)
+

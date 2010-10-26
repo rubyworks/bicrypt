@@ -1,0 +1,14 @@
+--- 
+title     : Bicrypt
+summary   : Simple two-way encyrption/decryption
+license   : LGPLv3
+suite     : rubyworks
+copyright : Copyright (c) 2007 Thomas Sawyer
+created   : 2007-07-01
+
+authors:
+  - Thomas Sawyer
+
+description:
+  Simple two-way encryption/decryption class.
+
