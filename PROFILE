@@ -1,9 +1,8 @@
---- 
+---
 title     : Bicrypt
 summary   : Simple two-way encyrption/decryption
-license   : LGPLv3
+license   : Apache 2.0
 suite     : rubyworks
-copyright : Copyright (c) 2007 Thomas Sawyer
 created   : 2007-07-01
 
 authors:
@@ -11,4 +10,12 @@ authors:
 
 description:
   Simple two-way encryption/decryption class.
+
+resources:
+  home: http://rubydoc.info/gems/bicrypt
+  docs: http://rubydoc.info/gems/bicrypt
+  code: http://github.com/rubyworks/bicrypt
+
+copyright:
+  Copyright (c) 2007 Thomas Sawyer
 

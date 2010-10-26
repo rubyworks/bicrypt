@@ -1,23 +1,8 @@
-# = BiCrypt
-#
-# A simple two-way encryption class.
-#
-# == Authors
-#
-# * Trans
-#
-# == Copying
+# BiCrypt - A Simple Two-Way Encryption Class
 #
 # Copyright (c) 2007 Trans
 #
-# LPGL License
-#
-# This module is free software. You may use, modify, and/or redistribute this
-# software under the same terms of the LGPL version 3 or greater.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.
+# Apache 2.0 License
 
 require 'stringio'
 
