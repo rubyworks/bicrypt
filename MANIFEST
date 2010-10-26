@@ -1,0 +1,7 @@
+#!mast -x Syckfile bin lib meta test [A-Z]*
+lib/bicrypt.rb
+HISTORY.rdoc
+PROFILE
+LICENSE
+README.rdoc
+VERSION
