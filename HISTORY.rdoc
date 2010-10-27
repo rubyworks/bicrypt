@@ -1,6 +1,17 @@
 = RELEASE HISTORY
 
-== 1.0.0 // 2009-07-01
+== 1.1.0 / 2010-10-26
+
+This release makes one simple change. It removed the String#^
+extension and replaces it with BiCrypt#xor, thus preventing
+any potential core extension clashes.
+
+Changes:
+
+* Replace String#^ with ByCrypt#xor.
+
+
+== 1.0.0 / 2009-07-01
 
 Initial stand-alone release, ported from Ruby Facets.
 
