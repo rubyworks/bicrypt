@@ -2,7 +2,17 @@
 #
 # Copyright (c) 2007 Trans
 #
-# Apache 2.0 License
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 require 'stringio'
 
@@ -11,6 +21,12 @@ require 'stringio'
 # A simple two-way encryption class.
 #
 # This class is based on algorithms given in Applied Cryptography 2nd Ed.
+#
+# If subclassed, the new encryption class must provide three methods:
+#
+# * encrypt_block(block)
+# * decrypt_block(block)
+# * block_size()
 #
 class BiCrypt
 
@@ -43,6 +59,10 @@ class BiCrypt
   def initialize(userKey)
     @sBox = SBOX
 
+    if userKey.size < 8
+      userKey += '01234567'
+    end
+
     #@sTable = precalculate_s_table()
 
     # derive the 32-byte key from the user-supplied key
@@ -55,7 +75,94 @@ class BiCrypt
     end
   end
 
-private
+  public
+
+  # Encrypt an IO stream.
+  def encrypt_stream(plainStream, cryptStream)
+    # Cypher-block-chain mode
+
+    initVector = generate_initialization_vector(block_size() / 4)
+    chain = encrypt_block(initVector)
+    cryptStream.write(chain)
+
+    while ((block = plainStream.read(block_size())) && (block.length == block_size()))
+      block = xor(block, chain)
+      encrypted = encrypt_block(block)
+      cryptStream.write(encrypted)
+      chain = encrypted
+    end
+
+    # write the final block
+    # At most block_size()-1 bytes can be part of the message.
+    # That means the final byte can be used to store the number of meaningful
+    # bytes in the final block
+    block = '' if block.nil?
+    buffer = block.split('')
+    remainingMessageBytes = buffer.length
+    # we use 7-bit characters to avoid possible strange behavior on the Mac
+    remainingMessageBytes.upto(block_size()-2) { buffer << rand(128).chr }
+    buffer << remainingMessageBytes.chr
+    block = buffer.join('')
+    block = xor(block, chain)
+    encrypted = encrypt_block(block)
+    cryptStream.write(encrypted)
+  end
+
+  # Decrypt an encrypted IO stream.
+  def decrypt_stream(cryptStream, plainStream)
+    # Cypher-block-chain mode
+    chain = cryptStream.read(block_size())
+
+    while (block = cryptStream.read(block_size()))
+      decrypted = decrypt_block(block)
+      plainText = xor(decrypted, chain)
+      plainStream.write(plainText) unless cryptStream.eof?
+      chain = block
+    end
+
+    # write the final block, omitting the padding
+    buffer = plainText.split('')
+    remainingMessageBytes = buffer.last.unpack('C').first
+    remainingMessageBytes.times { plainStream.write(buffer.shift) }
+  end
+
+  # Encrypt a file.
+  def encrypt_file(plainFilename, cryptFilename)
+    plainFile = carefully_open_file(plainFilename, 'rb')
+    cryptFile = carefully_open_file(cryptFilename, 'wb+')
+    encrypt_stream(plainFile, cryptFile)
+    plainFile.close unless plainFile.closed?
+    cryptFile.close unless cryptFile.closed?
+  end
+
+  # Decrypt an encrypted file.
+  def decrypt_file(cryptFilename, plainFilename)
+    cryptFile = carefully_open_file(cryptFilename, 'rb')
+    plainFile = carefully_open_file(plainFilename, 'wb+')
+    decrypt_stream(cryptFile, plainFile)
+    cryptFile.close unless cryptFile.closed?
+    plainFile.close unless plainFile.closed?
+  end
+
+  # Encrypt a string.
+  def encrypt_string(plainText)
+    plainStream = StringIO.new(plainText)
+    cryptStream = StringIO.new('')
+    encrypt_stream(plainStream, cryptStream)
+    cryptText = cryptStream.string
+    return(cryptText)
+  end
+
+  # Decrypt an encrypted string.
+  def decrypt_string(cryptText)
+    cryptStream = StringIO.new(cryptText)
+    plainStream = StringIO.new('')
+    decrypt_stream(cryptStream, plainStream)
+    plainText = plainStream.string
+    return(plainText)
+  end
+
+  private
 
   # S-boxes.
   attr :sBox
@@ -76,9 +183,6 @@ private
     )
   end
 
-  # If subclassed, the new encryption class must provide three methods:
-  # encrypt_block(block) and decrypt_block(block) and block_size()
-
   #
   def encrypt_block(block)
     xl, xr = block.unpack('NN')
@@ -97,7 +201,7 @@ private
 
   #
   def block_size
-    return(8)
+    8
   end
 
   #
@@ -175,98 +279,6 @@ private
     return(aFile)
   end
 
-public
-
-  # Encrypt an IO stream.
-  def encrypt_stream(plainStream, cryptStream)
-    # Cypher-block-chain mode
-
-    initVector = generate_initialization_vector(block_size() / 4)
-    chain = encrypt_block(initVector)
-    cryptStream.write(chain)
-
-    while ((block = plainStream.read(block_size())) && (block.length == block_size()))
-      block = block ^ chain
-      encrypted = encrypt_block(block)
-      cryptStream.write(encrypted)
-      chain = encrypted
-    end
-
-    # write the final block
-    # At most block_size()-1 bytes can be part of the message.
-    # That means the final byte can be used to store the number of meaningful
-    # bytes in the final block
-    block = '' if block.nil?
-    buffer = block.split('')
-    remainingMessageBytes = buffer.length
-    # we use 7-bit characters to avoid possible strange behavior on the Mac
-    remainingMessageBytes.upto(block_size()-2) { buffer << rand(128).chr }
-    buffer << remainingMessageBytes.chr
-    block = buffer.join('')
-    block = block ^ chain
-    encrypted = encrypt_block(block)
-    cryptStream.write(encrypted)
-  end
-
-  # Decrypt an encrypted IO stream.
-  def decrypt_stream(cryptStream, plainStream)
-    # Cypher-block-chain mode
-    chain = cryptStream.read(block_size())
-
-    while (block = cryptStream.read(block_size()))
-      decrypted = decrypt_block(block)
-      plainText = decrypted ^ chain
-      plainStream.write(plainText) unless cryptStream.eof?
-      chain = block
-    end
-
-    # write the final block, omitting the padding
-    buffer = plainText.split('')
-    remainingMessageBytes = buffer.last.unpack('C').first
-    remainingMessageBytes.times { plainStream.write(buffer.shift) }
-  end
-
-  # Encrypt a file.
-  def encrypt_file(plainFilename, cryptFilename)
-    plainFile = carefully_open_file(plainFilename, 'rb')
-    cryptFile = carefully_open_file(cryptFilename, 'wb+')
-    encrypt_stream(plainFile, cryptFile)
-    plainFile.close unless plainFile.closed?
-    cryptFile.close unless cryptFile.closed?
-  end
-
-  # Decrypt an encrypted file.
-  def decrypt_file(cryptFilename, plainFilename)
-    cryptFile = carefully_open_file(cryptFilename, 'rb')
-    plainFile = carefully_open_file(plainFilename, 'wb+')
-    decrypt_stream(cryptFile, plainFile)
-    cryptFile.close unless cryptFile.closed?
-    plainFile.close unless plainFile.closed?
-  end
-
-  # Encrypt a string.
-  def encrypt_string(plainText)
-    plainStream = StringIO.new(plainText)
-    cryptStream = StringIO.new('')
-    encrypt_stream(plainStream, cryptStream)
-    cryptText = cryptStream.string
-    return(cryptText)
-  end
-
-  # Decrypt an encrypted string.
-  def decrypt_string(cryptText)
-    cryptStream = StringIO.new(cryptText)
-    plainStream = StringIO.new('')
-    decrypt_stream(cryptStream, plainStream)
-    plainText = plainStream.string
-    return(plainText)
-  end
-
-end
-
-
-class String
-
   # Binary XOR of two strings. 
   #
   #   puts "\000\000\001\001" ^ "\000\001\000\001"
@@ -277,17 +289,21 @@ class String
   #   "\000\001\001\000"
   #   "\003\002\001"
   #
-  def ^(aString)
-    a = self.unpack('C'*(self.length))
-    b = aString.unpack('C'*(aString.length))
+  #--
+  # NOTE: This used to be a String#^ extension in v1.0. So if
+  # an uncaught bug should arise check this first.
+  #++
+  def xor(str1, str2)
+    a = str1.unpack('C'*(str1.length)) #.bytes.to_a
+    b = str2.unpack('C'*(str2.length)) #.bytes.to_a
     if (b.length < a.length)
       (a.length - b.length).times { b << 0 }
     end
     xor = ""
-    0.upto(a.length-1) { |pos|
+    0.upto(a.length - 1) do |pos|
       x = a[pos] ^ b[pos]
       xor << x.chr()
-    }
+    end
     return(xor)
   end
 
