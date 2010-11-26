@@ -30,6 +30,8 @@ require 'stringio'
 #
 class BiCrypt
 
+  VERSION = '1.1.0'
+
   ULONG   = 0x100000000
 
   # These are the S-boxes given in Applied Cryptography 2nd Ed., p. 333
