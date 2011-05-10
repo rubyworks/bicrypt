@@ -1,10 +1,10 @@
-#!mast -x Syckfile .ruby bin lib qed test [A-Z]*
+#!mast -x Redfile .ruby bin lib qed test [A-Z]*
 .ruby
 lib/bicrypt.rb
-qed/01_example.rb
+qed/01_example.rdoc
 qed/applique/setup.rb
-HISTORY.rdoc
-PROFILE
-LICENSE
+Profile
+APACHE2.txt
 README.rdoc
-VERSION
+History.rdoc
+Version
