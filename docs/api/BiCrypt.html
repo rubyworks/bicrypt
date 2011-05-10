@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: BiCrypt</title>
+
+  
+    <link rel="SHORTCUT ICON" href="./assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="./assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="./assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="./assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#documentation pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind( "click", highlightClickTarget );
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="./assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="./index.html">&quot;BiCrypt&quot;</a>&nbsp;
+      <a href="/">BiCrypt</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="./lib/bicrypt_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/bicrypt.rb">lib/bicrypt.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+            
+              <li class="class">Object</li>
+            
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#method-c-new">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-decrypt_file">#decrypt_file</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-decrypt_stream">#decrypt_stream</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-decrypt_string">#decrypt_string</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-encrypt_file">#encrypt_file</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-encrypt_stream">#encrypt_stream</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#method-i-encrypt_string">#encrypt_string</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="./Version.html">Version</a></li>
+        
+          <li class="file"><a href="./Profile.html">Profile</a></li>
+        
+          <li class="file"><a href="./Redfile.html">Redfile</a></li>
+        
+          <li class="file"><a href="./History_rdoc.html">History.rdoc</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./APACHE2_txt.html">APACHE2.txt</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="class"><a href="./BiCrypt.html">BiCrypt</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="./assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://rubyworks.github.com/newfish">Newfish</a> 0.2.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      
+<h1><a href="BiCrypt.html">BiCrypt</a></h1>
+
+<p>A simple two-way encryption class.</p>
+
+<p>This class is based on algorithms given in Applied Cryptography 2nd Ed.</p>
+
+<p>If subclassed, the new encryption class must provide three methods:</p>
+<ul><li>
+<p>encrypt_block(block)</p>
+</li><li>
+<p>decrypt_block(block)</p>
+</li><li>
+<p>block_size()</p>
+</li></ul>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="VERSION">VERSION</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="ULONG">ULONG</a></dt>
+        
+        <dd class="description"></dd>
+        
+      
+        <dt><a name="SBOX">SBOX</a></dt>
+        
+        <dd class="description"><p>These are the S-boxes given in Applied Cryptography 2nd Ed., p. 333</p></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="method-c-new"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(userKey)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">userKey</span>)
+  <span class="ruby-ivar">@sBox</span> = <span class="ruby-constant">SBOX</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">userKey</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">8</span>
+    <span class="ruby-identifier">userKey</span> <span class="ruby-operator">+=</span> <span class="ruby-string">'01234567'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">#@sTable = precalculate_s_table()</span>
+
+  <span class="ruby-comment"># derive the 32-byte key from the user-supplied key</span>
+  <span class="ruby-identifier">userKeyLength</span> = <span class="ruby-identifier">userKey</span>.<span class="ruby-identifier">length</span>
+
+  <span class="ruby-ivar">@key</span> = <span class="ruby-identifier">userKey</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">31</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'C'</span>*<span class="ruby-value">32</span>)
+
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">userKeyLength</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">32</span>)
+    <span class="ruby-identifier">userKeyLength</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-value">31</span>) { <span class="ruby-ivar">@key</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="decrypt_file-method" class="method-detail ">
+        <a name="method-i-decrypt_file"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">decrypt_file</span><span
+            class="method-args">(cryptFilename, plainFilename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Decrypt an encrypted file.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="decrypt_file-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decrypt_file</span>(<span class="ruby-identifier">cryptFilename</span>, <span class="ruby-identifier">plainFilename</span>)
+  <span class="ruby-identifier">cryptFile</span> = <span class="ruby-identifier">carefully_open_file</span>(<span class="ruby-identifier">cryptFilename</span>, <span class="ruby-string">'rb'</span>)
+  <span class="ruby-identifier">plainFile</span> = <span class="ruby-identifier">carefully_open_file</span>(<span class="ruby-identifier">plainFilename</span>, <span class="ruby-string">'wb+'</span>)
+  <span class="ruby-identifier">decrypt_stream</span>(<span class="ruby-identifier">cryptFile</span>, <span class="ruby-identifier">plainFile</span>)
+  <span class="ruby-identifier">cryptFile</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cryptFile</span>.<span class="ruby-identifier">closed?</span>
+  <span class="ruby-identifier">plainFile</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">plainFile</span>.<span class="ruby-identifier">closed?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="decrypt_stream-method" class="method-detail ">
+        <a name="method-i-decrypt_stream"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">decrypt_stream</span><span
+            class="method-args">(cryptStream, plainStream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Decrypt an encrypted IO stream.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="decrypt_stream-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decrypt_stream</span>(<span class="ruby-identifier">cryptStream</span>, <span class="ruby-identifier">plainStream</span>)
+  <span class="ruby-comment"># Cypher-block-chain mode</span>
+  <span class="ruby-identifier">chain</span> = <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">block_size</span>())
+
+  <span class="ruby-keyword">while</span> (<span class="ruby-identifier">block</span> = <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">block_size</span>()))
+    <span class="ruby-identifier">decrypted</span> = <span class="ruby-identifier">decrypt_block</span>(<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">plainText</span> = <span class="ruby-identifier">xor</span>(<span class="ruby-identifier">decrypted</span>, <span class="ruby-identifier">chain</span>)
+    <span class="ruby-identifier">plainStream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">plainText</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">eof?</span>
+    <span class="ruby-identifier">chain</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># write the final block, omitting the padding</span>
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">plainText</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">remainingMessageBytes</span> = <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'C'</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">remainingMessageBytes</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">plainStream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">shift</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="decrypt_string-method" class="method-detail ">
+        <a name="method-i-decrypt_string"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">decrypt_string</span><span
+            class="method-args">(cryptText)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Decrypt an encrypted string.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="decrypt_string-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decrypt_string</span>(<span class="ruby-identifier">cryptText</span>)
+  <span class="ruby-identifier">cryptStream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">cryptText</span>)
+  <span class="ruby-identifier">plainStream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">decrypt_stream</span>(<span class="ruby-identifier">cryptStream</span>, <span class="ruby-identifier">plainStream</span>)
+  <span class="ruby-identifier">plainText</span> = <span class="ruby-identifier">plainStream</span>.<span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">return</span>(<span class="ruby-identifier">plainText</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="encrypt_file-method" class="method-detail ">
+        <a name="method-i-encrypt_file"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">encrypt_file</span><span
+            class="method-args">(plainFilename, cryptFilename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Encrypt a file.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="encrypt_file-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encrypt_file</span>(<span class="ruby-identifier">plainFilename</span>, <span class="ruby-identifier">cryptFilename</span>)
+  <span class="ruby-identifier">plainFile</span> = <span class="ruby-identifier">carefully_open_file</span>(<span class="ruby-identifier">plainFilename</span>, <span class="ruby-string">'rb'</span>)
+  <span class="ruby-identifier">cryptFile</span> = <span class="ruby-identifier">carefully_open_file</span>(<span class="ruby-identifier">cryptFilename</span>, <span class="ruby-string">'wb+'</span>)
+  <span class="ruby-identifier">encrypt_stream</span>(<span class="ruby-identifier">plainFile</span>, <span class="ruby-identifier">cryptFile</span>)
+  <span class="ruby-identifier">plainFile</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">plainFile</span>.<span class="ruby-identifier">closed?</span>
+  <span class="ruby-identifier">cryptFile</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cryptFile</span>.<span class="ruby-identifier">closed?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="encrypt_stream-method" class="method-detail ">
+        <a name="method-i-encrypt_stream"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">encrypt_stream</span><span
+            class="method-args">(plainStream, cryptStream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Encrypt an IO stream.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="encrypt_stream-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encrypt_stream</span>(<span class="ruby-identifier">plainStream</span>, <span class="ruby-identifier">cryptStream</span>)
+  <span class="ruby-comment"># Cypher-block-chain mode</span>
+
+  <span class="ruby-identifier">initVector</span> = <span class="ruby-identifier">generate_initialization_vector</span>(<span class="ruby-identifier">block_size</span>() <span class="ruby-operator">/</span> <span class="ruby-value">4</span>)
+  <span class="ruby-identifier">chain</span> = <span class="ruby-identifier">encrypt_block</span>(<span class="ruby-identifier">initVector</span>)
+  <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">chain</span>)
+
+  <span class="ruby-keyword">while</span> ((<span class="ruby-identifier">block</span> = <span class="ruby-identifier">plainStream</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">block_size</span>())) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">block</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">block_size</span>()))
+    <span class="ruby-identifier">block</span> = <span class="ruby-identifier">xor</span>(<span class="ruby-identifier">block</span>, <span class="ruby-identifier">chain</span>)
+    <span class="ruby-identifier">encrypted</span> = <span class="ruby-identifier">encrypt_block</span>(<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">encrypted</span>)
+    <span class="ruby-identifier">chain</span> = <span class="ruby-identifier">encrypted</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># write the final block</span>
+  <span class="ruby-comment"># At most block_size()-1 bytes can be part of the message.</span>
+  <span class="ruby-comment"># That means the final byte can be used to store the number of meaningful</span>
+  <span class="ruby-comment"># bytes in the final block</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-string">''</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">remainingMessageBytes</span> = <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-comment"># we use 7-bit characters to avoid possible strange behavior on the Mac</span>
+  <span class="ruby-identifier">remainingMessageBytes</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">block_size</span>()<span class="ruby-operator">-</span><span class="ruby-value">2</span>) { <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">128</span>).<span class="ruby-identifier">chr</span> }
+  <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">remainingMessageBytes</span>.<span class="ruby-identifier">chr</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">block</span> = <span class="ruby-identifier">xor</span>(<span class="ruby-identifier">block</span>, <span class="ruby-identifier">chain</span>)
+  <span class="ruby-identifier">encrypted</span> = <span class="ruby-identifier">encrypt_block</span>(<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">encrypted</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="encrypt_string-method" class="method-detail ">
+        <a name="method-i-encrypt_string"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">encrypt_string</span><span
+            class="method-args">(plainText)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>Encrypt a string.</p>
+          
+
+          
+          <div class="method-source-code"
+            id="encrypt_string-source">
+<pre>
+<span class="ruby-comment"># File lib/bicrypt.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encrypt_string</span>(<span class="ruby-identifier">plainText</span>)
+  <span class="ruby-identifier">plainStream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">plainText</span>)
+  <span class="ruby-identifier">cryptStream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">encrypt_stream</span>(<span class="ruby-identifier">plainStream</span>, <span class="ruby-identifier">cryptStream</span>)
+  <span class="ruby-identifier">cryptText</span> = <span class="ruby-identifier">cryptStream</span>.<span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">return</span>(<span class="ruby-identifier">cryptText</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

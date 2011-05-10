@@ -1,15 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
-  <head>
-    <title>Bicrypt</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-  </head>
-  <frameset border='1' bordercolor='gray' cols='20%, *' frameborder='1'>
-    <frameset rows='15%, 35%, 50%'>
-      <frame name='Files' src='fr_file_index.html' title='Files'></frame>
-      <frame name='Classes' src='fr_class_index.html'></frame>
-      <frame name='Methods' src='fr_method_index.html'></frame>
-    </frameset>
-    <frame name='docwin' src='files/README_rdoc.html'></frame>
-  </frameset>
+<html>
+<head>
+  <title>BiCrypt</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <script src="https://www.google.com/jsapi?key=ABQIAAAAC0cwg6G7o9jiwZmqNywcHhTFDYVHHqbagoxxH3eapnRTbNVJyxRCtIdgQ791BGYBsns_CTixx4KyPg" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script>
+    //google.load("jquery", "1.5.2");
+    $(document).ready(function(){
+      $("#readme").load("readme.html");
+    });
+  </script>
+  <style>
+    body { font-family: monospace; margin: 0; padding: 0; background: url(assets/bg.jpg) top center #626262;}
+    li p { margin: 2px; }
+    h1 { font-size: 4em; height: 90px; padding: 0; }
+    h2 { margin-top: 30px; }
+    pre { padding: 20px; background: #ded; font-size: 0.9em; font-family: courier; font-weight: bold; }
+    a { text-decoration: none; color: green; }
+    a:hover { text-decoration: underline; }
+
+    #nav { font-size: 1.2em; text-align: center; background: #222; padding: 10px; color: #FFF; font-weight: bold; }
+    #nav a { color: #5F5; font-weight: bold; }
+    #main { margin: 0 auto; max-width: 780px; }
+    #readme { opacity: 0.9; background: #fff; padding: 0.5em 2em 3em 2em; }
+    #footer { margin-top: 0; padding: 40px 0; text-align: center; background: #222; border-top: 1px solid #999; }
+
+    #rubyworks{ position: fixed; bottom: 10px; right: 10px; padding: 0; opacity: 0.3; }
+  </style>
+</head>
+<body>
+
+<div id="main">
+  <div id="nav">
+    BiCrypt &nbsp; &middot; &nbsp;
+    <a href="">Home</a> &nbsp;
+    <a href="docs/api/index.html">API</a> &nbsp;
+    <a href="docs/qed/index.html">QED</a> &nbsp;
+    <a href="http://rubygems.org/gems/bicrypt">Gem</a> &nbsp;
+    <a href="http://github.com/rubyworks/bicrypt">Code</a> &nbsp;
+  </div>
+
+  <div id="readme">
+  </div>
+
+  <div id="footer">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1126154564663472";
+    /* RUBYWORKS 09-10-02 728x90 */
+    google_ad_slot = "0788888658";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+</div>
+
+<div id="rubyworks">
+  <a href="http://rubyworks.github.com">
+    <img src="http://rubyworks.github.com/assets/images/seal.png" height="175px" />
+  </a>
+</div>
+
+</body>
 </html>
+
