@@ -1,11 +1,9 @@
 ---
 grancher:
-  active: false
+  active: true
 
-box:
-  service: Box
-  types  : [gem]
-  spec   : '.gemspec'
+gem:
+  service: Gem
   active : true
 
 dnote:
@@ -26,16 +24,16 @@ stats:
 
 rdoc:
   service  : RDoc
-  template : redfish
+  format   : newfish
   include  : ~
   exclude  : ~
   main     : ~
   extra    : ~
   output   : site/docs/api
-  active   : false
+  active   : true
 
-ridoc:
-  service: RIDoc
+ri:
+  service: RI
   include: ~
   exclude: ~
   output : ri
@@ -62,7 +60,6 @@ email:
   login   : <%= ENV['EMAIL_LOGIN'] %>
   secure  : <%= ENV['EMAIL_SECURE'] %>
   active  : true
-
 
 #testrb:
 #  service  : Testrb

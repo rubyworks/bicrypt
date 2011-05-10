@@ -1,7 +1,7 @@
 = BiCrypt
 
-* docs: http://rubydoc.info/gems/bicrypt
-* code: http://rubyworks.github.com/bicrypt
+License:: Apache 2.0
+Copyright:: (c) 2007 Thomas Sawyrer
 
 
 == DESCRIPTION
@@ -9,10 +9,17 @@
 BiCrypt is a simple two-way encryption class.
 
 
-== FEATURES/ISSUES
+== FEATURES
 
 * Simple to use.
 * Good for light-weight "deterence" applications.
+
+
+== RESOURCES
+
+* home: http://rubyworks.github.com/bicrypt
+* docs: http://rubydoc.info/gems/bicrypt
+* code: http://github.com/rubyworks/bicrypt
 
 
 == RELEASE NOTES

@@ -2,7 +2,6 @@
 title     : BiCrypt
 summary   : Simple two-way encyrption/decryption
 license   : Apache 2.0
-suite     : rubyworks
 created   : 2007-07-01
 
 requires:
@@ -15,11 +14,7 @@ authors:
 description:
   Simple two-way encryption/decryption class.
 
-resources:
-  home: http://rubydoc.info/gems/bicrypt
-  docs: http://rubydoc.info/gems/bicrypt
-  code: http://github.com/rubyworks/bicrypt
-
 copyright:
   Copyright (c) 2007 Thomas Sawyer
 
+organization: Rubyworks
