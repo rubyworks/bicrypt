@@ -5,7 +5,7 @@ license   : Apache 2.0
 created   : 2007-07-01
 
 requires:
-  - syckle (build)
+  - redline (build)
   - qed (test)
 
 authors:
