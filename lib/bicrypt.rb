@@ -30,7 +30,7 @@ require 'stringio'
 #
 class BiCrypt
 
-  VERSION = '1.1.0'
+  VERSION = '1.1.1'
 
   ULONG   = 0x100000000
 
