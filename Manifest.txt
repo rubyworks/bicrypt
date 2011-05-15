@@ -3,6 +3,7 @@
 lib/bicrypt.rb
 qed/01_example.rdoc
 qed/applique/setup.rb
+HISTORY.rdoc
 APACHE2.txt
 README.rdoc
 NOTICE.rdoc

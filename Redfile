@@ -30,7 +30,7 @@ rdoc:
   main     : ~
   extra    : ~
   output   : site/docs/api
-  active   : true
+  active   : false
 
 ri:
   service: RI
@@ -38,6 +38,12 @@ ri:
   exclude: ~
   output : ri
   active : true
+
+# TODO: use YARD plugin once it is fixed (2011-05)
+yard:
+  service: custom
+  document: |
+    system "yard -r README.rdoc -o site/docs/api lib/ - README.rdoc HISTORY.rdoc NOTICE.rdoc APACHE2.txt"
 
 #vclog:
 #  service  : VClog
