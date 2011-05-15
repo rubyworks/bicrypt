@@ -1,10 +1,8 @@
-#!mast -x Redfile .ruby bin lib qed test [A-Z]*
+#!mast .ruby bin lib qed test [A-Z][A-Z]*
 .ruby
 lib/bicrypt.rb
 qed/01_example.rdoc
 qed/applique/setup.rb
-Profile
 APACHE2.txt
 README.rdoc
-History.rdoc
-Version
+NOTICE.rdoc

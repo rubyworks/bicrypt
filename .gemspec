@@ -2,7 +2,7 @@
 name: bicrypt
 version: !ruby/object:Gem::Version 
   hash: 19
-  prerelease: false
+  prerelease: 
   segments: 
   - 1
   - 1
@@ -15,11 +15,10 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2010-10-26 00:00:00 -04:00
-default_executable: 
+date: 2011-05-15 00:00:00 Z
 dependencies: 
 - !ruby/object:Gem::Dependency 
-  name: syckle
+  name: redline
   prerelease: false
   requirement: &id001 !ruby/object:Gem::Requirement 
     none: false
@@ -55,22 +54,20 @@ extensions: []
 extra_rdoc_files: 
 - README.rdoc
 files: 
+- .ruby
 - lib/bicrypt.rb
-- meta/package
-- meta/profile
-- qed/01_example.rb
+- qed/01_example.rdoc
 - qed/applique/setup.rb
-- HISTORY.rdoc
-- LICENSE
+- APACHE2.txt
 - README.rdoc
-has_rdoc: true
-homepage: http://rubydoc.info/gems/bicrypt
+- NOTICE.rdoc
+homepage: http://rubyworks.github.com/bicrypt
 licenses: 
 - Apache 2.0
 post_install_message: 
 rdoc_options: 
 - --title
-- Bicrypt API
+- BiCrypt API
 - --main
 - README.rdoc
 require_paths: 
@@ -96,7 +93,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
 requirements: []
 
 rubyforge_project: bicrypt
-rubygems_version: 1.3.7
+rubygems_version: 1.7.2
 signing_key: 
 specification_version: 3
 summary: Simple two-way encyrption/decryption
