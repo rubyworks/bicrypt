@@ -1,13 +1,13 @@
 --- !ruby/object:Gem::Specification 
 name: bicrypt
 version: !ruby/object:Gem::Version 
-  hash: 19
+  hash: 17
   prerelease: false
   segments: 
   - 1
   - 1
-  - 0
-  version: 1.1.0
+  - 1
+  version: 1.1.1
 platform: ruby
 authors: 
 - Thomas Sawyer

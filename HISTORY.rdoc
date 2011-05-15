@@ -1,5 +1,14 @@
 = RELEASE HISTORY
 
+== 1.1.1 / 2011-05-15
+
+This release simply fixes a build dependency.
+
+Changes:
+
+* Syckle has been renamed to Redline.
+
+
 == 1.1.0 / 2010-10-26
 
 This release makes one simple change. It removed the String#^
