@@ -43,7 +43,7 @@ ri:
 yard:
   service: custom
   document: |
-    system "yard -r README.rdoc -o site/docs/api lib/ - README.rdoc HISTORY.rdoc NOTICE.rdoc APACHE2.txt"
+    system "yard -r README.rdoc -o site/docs/api lib/ - HISTORY.rdoc NOTICE.rdoc APACHE2.txt"
 
 #vclog:
 #  service  : VClog
