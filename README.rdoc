@@ -1,7 +1,7 @@
 = BiCrypt
 
-License:: Apache 2.0
-Copyright:: (c) 2007 Thomas Sawyer
+Copyright:: (c) 2007 Thomas Sawyer, Rubyworks
+License:: BSD-2-Clause
 
 
 == DESCRIPTION
@@ -17,9 +17,9 @@ BiCrypt is a simple two-way encryption class.
 
 == RESOURCES
 
-* home: http://rubyworks.github.com/bicrypt
-* docs: http://rubydoc.info/gems/bicrypt
-* code: http://github.com/rubyworks/bicrypt
+* {Homepage}[http://rubyworks.github.com/bicrypt]
+* {Documentation}[http://rubydoc.info/gems/bicrypt]
+* {Source Code}[http://github.com/rubyworks/bicrypt]
 
 
 == RELEASE NOTES
@@ -52,9 +52,9 @@ Windows users use 'ruby setup.rb all'.
 
 == LEGAL
 
-(Apache 2.0 License)
+(BSD 2-Cluase License)
 
-Copyright (c) 2007 Thomas Sawyer
+Copyright (c) 2007 Thomas Sawyer, Rubyworks
 
-BiCrypt is distibuted under the terms of the Apache 2.0 license.
-See NOTICE.rdoc and APACHE2.txt file for details.
+BiCrypt is distibuted under the terms of the FreeBSD license.
+See COPYING.rdoc and LICENSE.txt files for details.
