@@ -6,9 +6,12 @@ Copyright:: (c) 2007 Thomas Sawyer
 License:: BSD-2-Clause
 Website:: http://rubyworks.github.com/bicrypt
 
+    Copyright (c) 2007 Thomas Sawyer
+
     Licensed under the FreeBSD License (the "License");
-    You will find a copy of the License enclosed in the file
-    {LICENSE.txt}[LICENSE.txt].
+    You will find a copy of the License enclosed in the file:
+
+        LICENSE.txt
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
