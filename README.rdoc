@@ -24,26 +24,26 @@ BiCrypt is a simple two-way encryption class.
 
 == RELEASE NOTES
 
-Please see {HISTORY.rdoc}[HISTORY.rdoc] file.
+Please see HISTORY.rdoc file.
 
 
 == USAGE
 
-See QED example[spec/01_example] document.
+See QED example document (spec/01_example.rdoc).
 
 
 == HOW TO INSTALL
 
 To install with RubyGems simply open a console and type:
 
-  gem install bicrypt
+  $ gem install bicrypt
 
 Local installation requires Setup.rb (gem install setup),
 then download the tarball package and type:
 
-  tar -xvzf bicrypt-1.0.0.tgz
-  cd bicrypt-1.0.0
-  sudo setup.rb all
+  $ tar -xvzf bicrypt-1.0.0.tgz
+  $ cd bicrypt-1.0.0
+  $ sudo setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
