@@ -17,9 +17,9 @@ BiCrypt is a simple two-way encryption class.
 
 == RESOURCES
 
-* {Homepage}[http://rubyworks.github.com/bicrypt]
+* {Website}[http://rubyworks.github.com/bicrypt]
 * {Documentation}[http://rubydoc.info/gems/bicrypt]
-* {Source Code}[http://github.com/rubyworks/bicrypt]
+* {Development}[http://github.com/rubyworks/bicrypt]
 
 
 == RELEASE NOTES
