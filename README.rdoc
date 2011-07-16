@@ -24,17 +24,15 @@ BiCrypt is a simple two-way encryption class.
 
 == RELEASE NOTES
 
-Please see HISTORY.rdoc file.
+Please see {HISTORY.rdoc}[HISTORY.rdoc] file.
 
 
 == USAGE
 
-See QED example[qed/01_example] document.
+See QED example[spec/01_example] document.
 
 
 == HOW TO INSTALL
-
-Describe your installation procedure here.
 
 To install with RubyGems simply open a console and type:
 
