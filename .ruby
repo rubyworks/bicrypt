@@ -1,40 +1,39 @@
---- 
-spec_version: 1.0.0
-replaces: []
-
-loadpath: 
-- lib
-name: bicrypt
-repositories: {}
-
+---
+authors:
+- name: Thomas Sawyer
+  email: transfire@gmail.com
+copyrights:
+- holder: Thomas Sawyer
+  year: '2007'
+  license: BSD-2-Clause
+replacements: []
 conflicts: []
-
-engine_check: []
-
-title: BiCrypt
-resources: 
-  code: http://github.com/rubyworks/bicrypt
-  docs: http://rubydoc.info/gems/bicrypt
-  home: http://rubyworks.github.com/bicrypt
-maintainers: []
-
-requires: 
-- group: 
+requirements:
+- name: detroit
+  groups:
   - build
-  name: redline
-  version: 0+
-- group: 
+  development: true
+- name: qed
+  groups:
   - test
-  name: qed
-  version: 0+
-manifest: Manifest.txt
-version: 1.1.0
-licenses: 
-- Apache 2.0
-copyright: Copyright (c) 2007 Thomas Sawyer
-authors: 
-- Thomas Sawyer
-organization: Rubyworks
+  development: true
+dependencies: []
+repositories: []
+resources:
+  home: http://rubyworks.github.com/bicrypt
+  code: http://github.com/rubyworks/bicrypt
+  mail: http://groups.google.com/group/rubyworks-mailinglist
+load_path:
+- lib
+extra:
+  manifest: MANIFEST
+alternatives: []
+revision: 0
+name: bicrypt
+title: BiCrypt
+summary: Two-Way Encyrption/Decryption
 description: Simple two-way encryption/decryption class.
-summary: Simple two-way encyrption/decryption
-created: 2007-07-01
+organization: Rubyworks
+created: '2007-07-01'
+version: 1.2.0
+date: '2011-07-16'

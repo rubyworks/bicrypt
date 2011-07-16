@@ -48,9 +48,7 @@ then download the tarball package and type:
 Windows users use 'ruby setup.rb all'.
 
 
-== LEGAL
-
-(BSD 2-Cluase License)
+== COPYRIGHT
 
 Copyright (c) 2007 Thomas Sawyer, Rubyworks
 
