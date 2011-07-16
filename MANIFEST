@@ -1,0 +1,12 @@
+#!mast .ruby .yardopts bin lib spec test [A-Z][A-Z]*
+.ruby
+.yardopts
+lib/bicrypt.rb
+spec/01_example.rdoc
+spec/applique/setup.rb
+HISTORY.rdoc
+PROFILE
+LICENSE.txt
+README.rdoc
+VERSION
+COPYING.rdoc
