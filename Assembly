@@ -19,6 +19,13 @@ qedoc:
   files: spec/
   output: QED.rdoc
 
+readme:
+  service: custom
+  document: |
+    cmd = 'malt README.rdoc > site/readme.html'
+    puts cmd
+    sh cmd
+
 vclog:
   output:
     - log/ChangeLog.rdoc
