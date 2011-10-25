@@ -3,7 +3,7 @@
 == 1.2.0 / 2011-10-25
 
 This is another maintenance release to bring the build configuration
-up to data with modern tools. Function-wise nothing has changed.
+up to date with modern tools. Function-wise nothing has changed.
 The major verison was bumped only to mark a fresh base.
 
 Changes:
