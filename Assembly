@@ -6,47 +6,25 @@ gem:
   active : true
 
 dnote:
-  labels   : ~
-  output   : log/NOTES.rdoc
+  labels: ~
+  output: log/NOTES.rdoc
 
 yard:
   yardopts: true
 
 qed:
-  files    : ~
-  #exclude  : ~
-  #loadpath : ~
-  #requires : ~
-  #live     : false   
+  active: true
 
 qedoc:
-  files    : spec/
-  output   : QED.rdoc
+  files: spec/
+  output: QED.rdoc
 
 vclog:
-  output   : log/ChangeLog.rdoc
+  output:
+    - log/ChangeLog.rdoc
 
 email:
-  service : Email
-  file    : ~
-  subject : ~
-  mailto  : 
+  mailto: 
     - ruby-talk@ruby-lang.org
     - rubyworks-mailinglist@googlegroups.com
-  from    : <%= ENV['EMAIL_ACCOUNT'] %>
-  server  : <%= ENV['EMAIL_SERVER'] %>
-  port    : <%= ENV['EMAIL_PORT'] %>
-  account : <%= ENV['EMAIL_ACCOUNT'] %>
-  domain  : <%= ENV['EMAIL_DOMAIN'] %>
-  login   : <%= ENV['EMAIL_LOGIN'] %>
-  secure  : <%= ENV['EMAIL_SECURE'] %>
-
-#rubyforge:
-#  service : Rubyforge
-#  unixname: <= suite %>
-#  groupid : ~
-#  package : <= name %>
-#  sitemap:
-#    doc/rdoc: <= name %>
-#  active  : false
 

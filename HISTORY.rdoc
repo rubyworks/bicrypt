@@ -1,5 +1,16 @@
 = RELEASE HISTORY
 
+== 1.2.0 / 2011-10-25
+
+This is another maintenance release to bring the build configuration
+up to data with modern tools. Function-wise nothing has changed.
+The major verison was bumped only to mark a fresh base.
+
+Changes:
+
+* Modernize build configuration.
+
+
 == 1.1.1 / 2011-05-15
 
 This release simply fixes a build dependency.
