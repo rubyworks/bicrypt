@@ -52,5 +52,5 @@ Windows users use 'ruby setup.rb all'.
 
 Copyright (c) 2007 Thomas Sawyer, Rubyworks
 
-BiCrypt is distibuted under the terms of the FreeBSD license.
-See COPYING.rdoc and LICENSE.txt files for details.
+BiCrypt is distibuted under the terms of the *FreeBSD* license.
+See COPYING.rdoc for details.
