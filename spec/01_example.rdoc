@@ -20,19 +20,21 @@ Decrypt string.
 
 Encrypt file.
 
+  File.open('EXAMPLE.txt', 'w'){ |f| f << "This is an example." }
+
   e = BiCrypt.new("akey")
 
-  e.encrypt_file('README.rdoc', 'tmp/secret.txt')
+  e.encrypt_file('EXAMPLE.txt', 'secret.txt')
 
-  File.read('README.rdoc').assert! == File.read('tmp/secret.txt')
+  File.read('EXAMPLE.txt').assert! == File.read('secret.txt')
 
 Decrypt file.
 
   d = BiCrypt.new("akey")
 
-  d.decrypt_file('tmp/secret.txt', 'tmp/README.rdoc')
+  d.decrypt_file('secret.txt', 'tmp/README.rdoc')
 
-  File.read('README.rdoc').assert == File.read('tmp/README.rdoc')
+  File.read('EXAMPLE.txt').assert == File.read('EXAMPLE.txt')
 
 Both the string and the file methods are built on top of the general
 stream methods.
