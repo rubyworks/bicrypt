@@ -1,7 +1,6 @@
 = BiCrypt
 
-{<img src="http://travis-ci.org/rubyworks/bicrypt.png" />}[http://travis-ci.org/rubyworks/bicrypt]
-
+Status:: {<img src="http://travis-ci.org/rubyworks/bicrypt.png" />}[http://travis-ci.org/rubyworks/bicrypt]
 Copyright:: (c) 2007 Thomas Sawyer, Rubyworks
 License:: BSD-2-Clause
 
