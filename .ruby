@@ -1,6 +1,6 @@
 ---
 source:
-- meta
+- var
 authors:
 - name: Thomas Sawyer
   email: transfire@gmail.com
@@ -37,4 +37,4 @@ version: 1.2.0
 name: bicrypt
 description: Simple two-way encryption/decryption class.
 organization: Rubyworks
-date: '2011-10-25'
+date: '2011-11-11'
