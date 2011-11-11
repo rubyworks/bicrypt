@@ -15,11 +15,11 @@ yard:
   priority: 2
 
 qed:
-  files: spec
+  files: qed
   active: true
 
 qedoc:
-  files: spec
+  files: qed
   output: QED.rdoc
 
 readme:

@@ -2,8 +2,6 @@
 .ruby
 .yardopts
 lib/bicrypt.rb
-spec/01_example.rdoc
-spec/applique/setup.rb
 HISTORY.rdoc
 LICENSE.txt
 README.rdoc
