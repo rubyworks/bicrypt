@@ -1,8 +1,10 @@
 = BiCrypt
 
-Status:: {<img src="http://travis-ci.org/rubyworks/bicrypt.png" />}[http://travis-ci.org/rubyworks/bicrypt]
-Copyright:: (c) 2007 Thomas Sawyer, Rubyworks
-License:: BSD-2-Clause
+{Website}[http://rubyworks.github.com/bicrypt] |
+{Documentation}[http://rubydoc.info/gems/bicrypt] |
+{Development}[http://github.com/rubyworks/bicrypt]
+
+{<img src="http://travis-ci.org/rubyworks/bicrypt.png" />}[http://travis-ci.org/rubyworks/bicrypt]
 
 
 == DESCRIPTION
@@ -16,13 +18,6 @@ BiCrypt is a simple two-way encryption class.
 * Good for light-weight "deterrence" applications.
 
 
-== RESOURCES
-
-* {Website}[http://rubyworks.github.com/bicrypt]
-* {Documentation}[http://rubydoc.info/gems/bicrypt]
-* {Development}[http://github.com/rubyworks/bicrypt]
-
-
 == RELEASE NOTES
 
 Please see HISTORY.rdoc file.
@@ -30,7 +25,7 @@ Please see HISTORY.rdoc file.
 
 == USAGE
 
-See QED example document (spec/01_example.rdoc).
+See QED.rdoc or qed/01_example.rdoc for the run down.
 
 
 == HOW TO INSTALL
@@ -51,7 +46,8 @@ Windows users use 'ruby setup.rb all'.
 
 == COPYRIGHT
 
-Copyright (c) 2007 Thomas Sawyer, Rubyworks
+Copyright (c) 2007 Rubyworks. All rights reserved.
 
-BiCrypt is distibuted under the terms of the *FreeBSD* license.
+BiCrypt is distibuted under the terms of the *BSD-2-Clause* license.
+
 See COPYING.rdoc for details.
