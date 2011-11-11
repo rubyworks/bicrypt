@@ -1,18 +1,4 @@
 # BiCrypt - A Simple Two-Way Encryption Class
-#
-# Copyright (c) 2007 Trans
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 require 'stringio'
 
@@ -30,9 +16,11 @@ require 'stringio'
 #
 class BiCrypt
 
+  # Current release version of BiCrypt.
   VERSION = '1.2.0'
 
-  ULONG   = 0x100000000
+  #
+  ULONG = 0x100000000
 
   # These are the S-boxes given in Applied Cryptography 2nd Ed., p. 333
   SBOX = [
@@ -57,7 +45,9 @@ class BiCrypt
   # [15,  1,  8, 14,  6, 11,  3,  4,  9,  7,  2, 13, 12,  0,  5, 10 ],
   # [14,  4, 13,  1,  2, 15, 11,  8,  3, 10,  6, 12,  5,  9,  0,  7 ]
 
+  # Setup if BiCrypt instance.
   #
+  # @param [String] User key.
   def initialize(userKey)
     @sBox = SBOX
 
@@ -185,7 +175,7 @@ class BiCrypt
     )
   end
 
-  #
+  # Encrypt a block.
   def encrypt_block(block)
     xl, xr = block.unpack('NN')
     xl, xr = encrypt_pair(xl, xr)
@@ -193,7 +183,7 @@ class BiCrypt
     return(encrypted)
   end
 
-  #
+  # Decrypt a block.
   def decrypt_block(block)
     xl, xr = block.unpack('NN')
     xl, xr = decrypt_pair(xl, xr)
@@ -201,7 +191,7 @@ class BiCrypt
     return(decrypted)
   end
 
-  #
+  # Block size. Currently this is fixed at 8.
   def block_size
     8
   end
@@ -291,10 +281,9 @@ class BiCrypt
   #   "\000\001\001\000"
   #   "\003\002\001"
   #
-  #--
   # NOTE: This used to be a String#^ extension in v1.0. So if
   # an uncaught bug should arise check this first.
-  #++
+  #
   def xor(str1, str2)
     a = str1.unpack('C'*(str1.length)) #.bytes.to_a
     b = str2.unpack('C'*(str2.length)) #.bytes.to_a
@@ -311,3 +300,4 @@ class BiCrypt
 
 end
 
+# Copyright (c) 2007 Rubyworks. All rights reserved.

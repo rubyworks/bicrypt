@@ -25,7 +25,7 @@ qedoc:
 readme:
   service: custom
   document: |
-    cmd = 'malt README.rdoc > site/readme.html'
+    cmd = 'malt README.rdoc > web/readme.html'
     puts cmd; sh cmd
 
 vclog:
