@@ -15,12 +15,12 @@ yard:
   priority: 2
 
 qed:
-  files: qed
+  files: demo
   active: true
 
 qedoc:
-  files: qed
-  output: QED.rdoc
+  files: demo
+  output: DEMO.rdoc
 
 readme:
   service: custom
